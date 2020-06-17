@@ -643,7 +643,6 @@ a#instagram:before  {
     }  
     .button {
         color: #fff;
-        max-width: 100px;
     } 
     .button span, ul.select-list span.en, ul.select-list span.fr, ul.select-list span.nl{
         height: 35px;
