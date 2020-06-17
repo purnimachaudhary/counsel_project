@@ -31,7 +31,18 @@
                       <li><a href="#">WHY WE BEST</a></li>
                       <li><a href="#">TESTIMONIALS</a></li>
                       <li><a href="#">CONTACT</a></li>
-                      <li class="select-option">a<span class="arrow-down"></span></li>
+                        <li>
+                                <div class="drop-down">
+                                        <select name="options">
+                                            <option class="en" value="en" 
+                                           style="background-image:url('images/flag.png')"></option>
+                                            <option class="fr" value="fr"
+                                           style="background-image:url('images/flag.png')"></option>
+                                            <option class="nl" value="nl"
+                                           style="background-image:url('images/flag.png')"></option>
+                                        </select>
+                                    </div> 
+                        </li>
                   </ul>
               </div>
               
@@ -54,20 +65,20 @@
     <div class="slider-list">
         <div><img src="images/banner-img.jpg" alt="slider-img" class="responsive-images"/>
             <div class="content-area">
-                <h2 class="content"><span></span>
-                    Consumer Products Consulting</h2>
+                <h2 class="content"><span class="bar"></span>
+                    Consumer <br>Products <br>Consulting</h2>
                 <a href="#" class="link"><span></span>LEARN MORE</a>
             </div>
         </div>
           <div><img src="images/banner-img.jpg" alt="slider-img" class="responsive-images"/> 
             <div class="content-area">
-                <h2 class="content"><span></span>clients are happy</h2>
+                <h2 class="content"><span class="bar"></span>clients<br> are<br> happy</h2>
                 <a href="#" class="link"><span></span>LEARN MORE</a>
             </div> 
           </div>
           <div><img src="images/banner-img.jpg" alt="slider-img" class="responsive-images"/> 
             <div class="content-area">
-                <h2 class="content"><span></span>we are trustworthy here</h2>
+                <h2 class="content"><span class="bar"></span>we are <br>trustworthy <br>here</h2>
                 <a href="#" class="link"><span></span>LEARN MORE</a>
             </div> 
           </div>
@@ -372,9 +383,6 @@ $(document).ready(function (){
 <script src="js/scroll-entrance.js"></script>
 <script src="jquery.waypoints.min.js"></script>
 <script src="jquery.counterup.min.js"></script>
-<script src="js/animate-scroll.js"></script>
-<script src="js/EaselPlugin.min.js"></script>
-<script src="js/gsap.min.js"></script>
 <script type="text/javascript"></script>
 <script>
    $(document).animateScroll(); 
@@ -387,5 +395,37 @@ $(document).ready(function (){
       });
     });
         </script>
+        <script>
+        jQuery().ready(function() {  
+/* Custom select design */    
+jQuery('.drop-down').append('<div class="button"></div>');    
+jQuery('.drop-down').append('<ul class="select-list"></ul>');    
+jQuery('.drop-down select option').each(function() {  
+var bg = jQuery(this).css('background-image');    
+jQuery('.select-list').append('<li class="clsAnchor"><span value="' + jQuery(this).val() + '" class="' + jQuery(this).attr('class') + '" style=background-image:' + bg + '>' + jQuery(this).text() + '</span></li>');   
+});    
+jQuery('.drop-down .button').html('<span class="select-img" style=background-image:' + jQuery('.drop-down select').find(':selected').css('background-image') + '>' + jQuery('.drop-down select').find(':selected').text() + '</span>' + '<a href="javascript:void(0);" class="select-list-link"></a>');   
+jQuery('.drop-down ul li').each(function() {   
+if (jQuery(this).find('span').text() == jQuery('.drop-down select').find(':selected').text()) {  
+jQuery(this).addClass('active');       
+}      
+});     
+jQuery('.drop-down .select-list span').on('click', function()
+{          
+var dd_text = jQuery(this).text();  
+var dd_img = jQuery(this).css('background-image'); 
+var dd_val = jQuery(this).attr('value');   
+jQuery('.drop-down .button').html('<span style=background-image:' + dd_img + '>' + dd_text + '</span>' + '<a href="javascript:void(0);" class="select-list-link"></a>');      
+jQuery('.drop-down .select-list span').parent().removeClass('active');    
+jQuery(this).parent().addClass('active');     
+$('.drop-down select[name=options]').val( dd_val ); 
+$('.drop-down .select-list li').slideUp();     
+});       
+jQuery('.drop-down .button').on('click','a.select-list-link', function()
+{      
+jQuery('.drop-down ul li').slideToggle();  
+});     
+/* End */       
+});</script>
 </body>
 </html>
