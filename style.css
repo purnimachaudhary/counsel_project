@@ -106,14 +106,65 @@ a.bx-next:after {
     transform: translate(-50%, -50%);
 }
 /*--------flag-selection------------*/
-/* span#select2-language-select-container div {
-    position: absolute;
-    right: 0;
-    display: flex;
-    justify-content: space-evenly;
-    width: 85px;
-    top: 19px;
-} */
+
+.drop-down { 
+    position: relative;  
+    display: inline-block;    
+    width: auto;       
+    margin-top: 0;   
+    font-family: verdana;    
+    }      
+    .drop-down select {   
+    display: none;    
+    }      
+    .drop-down .select-list {   
+    position: absolute;     
+    top: 0;      
+    right: 0;     
+    z-index: 1;    
+    margin-top: 25px;    
+    padding: 0;         
+    background-color: #001d37; 
+    list-style: none;     
+    }      
+    .drop-down .select-list li {   
+    display: none; 
+    padding: 25px 0;     
+    }  
+    .button {
+        color: #fff;
+    } 
+    .button span, ul.select-list span.en, ul.select-list span.fr, ul.select-list span.nl{
+        height: 35px;
+        width: 50px;
+        position: absolute;
+    }
+    .button span{
+        right: -15px;
+        top: -11px;
+    }
+    ul.select-list span.en,  ul.select-list span.fr, ul.select-list span.nl{
+        left: -43px;
+    }
+    .drop-down .select-list li span {  
+    display: inline-block;      
+    min-height: 40px;        
+    min-width: 150px;      
+    width: 100%;        
+    padding: 5px 15px 5px 62px;     
+    background-color: #001d37;     
+    background-position: left 10px center;   
+    background-repeat: no-repeat;       
+    font-size: 16px;       
+    text-align: left;       
+    color: #FFF;        
+    opacity: 0.7;      
+    box-sizing: border-box;     
+    }     
+    .drop-down .select-list li span:hover,  
+    .drop-down .select-list li span:focus {     
+    opacity: 1;     
+    }
 /*-----padding-------*/
 footer .wrapper-flex{ padding: 0;}
 ul.main-menu li {
@@ -617,61 +668,3 @@ a#instagram:before  {
         top: -12%;
     }
 }
-.drop-down { 
-    position: relative;  
-    display: inline-block;    
-    width: auto;       
-    margin-top: 0;   
-    font-family: verdana;    
-    }      
-    .drop-down select {   
-    display: none;    
-    }      
-    .drop-down .select-list {   
-    position: absolute;     
-    top: 0;      
-    right: 0;     
-    z-index: 1;    
-    margin-top: 25px;    
-    padding: 0;         
-    background-color: #001d37; 
-    list-style: none;     
-    }      
-    .drop-down .select-list li {   
-    display: none; 
-    padding: 25px 0;     
-    }  
-    .button {
-        color: #fff;
-    } 
-    .button span, ul.select-list span.en, ul.select-list span.fr, ul.select-list span.nl{
-        height: 35px;
-        width: 50px;
-        position: absolute;
-    }
-    .button span{
-        right: -15px;
-        top: -11px;
-    }
-    ul.select-list span.en,  ul.select-list span.fr, ul.select-list span.nl{
-        left: -43px;
-    }
-    .drop-down .select-list li span {  
-    display: inline-block;      
-    min-height: 40px;        
-    min-width: 150px;      
-    width: 100%;        
-    padding: 5px 15px 5px 62px;     
-    background-color: #001d37;     
-    background-position: left 10px center;   
-    background-repeat: no-repeat;       
-    font-size: 16px;       
-    text-align: left;       
-    color: #FFF;        
-    opacity: 0.7;      
-    box-sizing: border-box;     
-    }     
-    .drop-down .select-list li span:hover,  
-    .drop-down .select-list li span:focus {     
-    opacity: 1;     
-    }
